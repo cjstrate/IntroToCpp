@@ -1,0 +1,37 @@
+Carter Strate, Section E, Player Navigated Maze
+
+Problem Description: The purpose of this program is to create a series of linked Nodes that the user can navigate in an attempt 
+to find the exit without beign caught by the pursuer. The player can open a map that shows all the rooms they have visited and 
+as well as the room they are in and the room the pursuer is in (if the pursuer is in a room that has been disovered).
+
+Program Documentation: The center of this program is the Maze class that when constructed links the 26 nodes together to create the maze.
+in the main file you call the traversePlayer() function that prompts the user for a direction to pick (or open map) and then executes whatever
+the choice the user selected. There is also a HighScore class that is very simple and just holds the score and name of a high score.
+This imformation is pulled from and uploaded to the HighScoreList.txt. The HighScoreList.txt currently has 4 test high scores to prove that my file i/o
+works. If I had more time I would have liked to figure out how to take user input in the SFML window as well as creating a larger maze with my objectives than just an exit.
+
+
+
+Data Structure: I used a vector of HighScores to store and sort the high scores for the score board. I chose a vectore because they are easy to work with and are dynamically sized.
+I also constructed the maze using the fundamentals of a LinkedList. The maze is created by using a series of nodes that can be linked on one of four ways (North East Sout West).
+This applies to the task at hand because it is the bases for how the maze works.
+
+TEST: When the user is asked to make a choice the program should just re-prompt if they enter a invalid input.
+1. When you are actaully playing the game. Go as far south from the start as possible then as far west and then straight north. If you do this you will find the exit in 8 turns and
+    should be able to add you score to the list and see that it is sorted
+2. If you go directly south from the starting position as far as possible you should run into the pursuer in which you will be brought back to the start of the progam after watching
+    a window opeing showing a sprite meant to be the pursuer. (if this does not work then go south from your current location)(the pursuer moves in a random direction but there is only
+    two directions that it can go at the start of the game)
+3. In the actaul game it will always so what direction you can go (closed == a wall and open == a door) If you pick a door you will move to the next node. If you pick a wall
+    (links to nullptr) then you will stay in the same room but the pursuer will still go in a random direction. Therefore while playing the game no input should be able to break
+    it (from what I tested at least).
+4. At the start there are 3 choice to either show high scores play or quite. The only choice that will end the program is quite. When you die or win the maze it will bring you back
+    to the start where you can either play again admire your high score or quite. You can also quite immediatly if you would like to.
+5. At anypoint while you are actually playing the game you are given the option to open the map. The map should show all the rooms you have been to in their relative locations.
+    If you follow the path to the north or the east you will be able to reach a dead end and then traverse back across the same rooms and check to see that the map does indeed
+    only appear if you have been in the room and that the current room you are in will be colored green instead of blue.
+
+Reflections: I have learned that often the initial vision of something rarely matches the end result. While I made this project I had to cut alot of what I wanted due to time and or
+lack of technical ability (mostly with SFML). What I would do differently is start working on this project a little bit sooner to allow time to figue some stuff out. I also wish I 
+wold have done more with SFML but I did not know it existed till a week before this project was do. I think that using graphics from SFML more and more consistenly would make the maze
+more fun and easier to navigate.
